@@ -1,0 +1,18 @@
+
+#grid {
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+    width: 960px;
+    height: 960px;
+    background-color: red;
+}
+
+#grid > div {
+    height: auto;
+    width: auto;
+    border: 1px solid black;
+}
+
+.touched {
+    background-color: blue;
+}
