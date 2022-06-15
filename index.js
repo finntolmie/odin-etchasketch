@@ -7,7 +7,6 @@ const createGrid = (num) => {
     num = CURRENT_NUM;
   }
   grid.innerHTML = "";
-  console.log("cleared");
   const root = document.querySelector(":root");
   root.style.setProperty("--numRows", num);
   for (let i = 0; i < num; i++) {
@@ -15,7 +14,11 @@ const createGrid = (num) => {
       const element = document.createElement("div");
       grid.append(element);
       element.onmouseover = () => {
-        element.classList.add("touched");
+        const r = Math.floor(Math.random() * 255);
+        const g = Math.floor(Math.random() * 255);
+        const b = Math.floor(Math.random() * 255);
+        const a = Math.random() + 0.2;
+        element.style.backgroundColor = "rgba(" + [r, g, b, a].join(",") + ")";
       };
     }
   }
