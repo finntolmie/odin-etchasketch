@@ -32,7 +32,3 @@ body {
   aspect-ratio: 1;
   border: 0.5px solid gray;
 }
-
-.touched {
-  background-color: black;
-}

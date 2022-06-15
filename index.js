@@ -1,10 +1,11 @@
-let CURRENT_NUM = 16;
+const DEFAULT_SIZE = 16;
+
+let currentSize = DEFAULT_SIZE;
 let grid = document.getElementById("grid");
 
 const createGrid = (num) => {
   if (num < 1 || num > 100) {
-    CURRENT_NUM = 16;
-    num = CURRENT_NUM;
+    num = DEFAULT_SIZE;
   }
   grid.innerHTML = "";
   const root = document.querySelector(":root");
@@ -23,15 +24,15 @@ const createGrid = (num) => {
     }
   }
 };
-createGrid(16);
+createGrid(DEFAULT_SIZE);
 
 let newButton = document.getElementById("new-grid");
 newButton.onclick = () => {
-  CURRENT_NUM = prompt("How many squares per side? From 1 to 100");
-  createGrid(CURRENT_NUM);
+  currentSize = prompt("How many squares per side? From 1 to 100");
+  createGrid(currentSize);
 };
 
 let clearButton = document.getElementById("clear-grid");
 clearButton.onclick = () => {
-  createGrid(CURRENT_NUM);
+  createGrid(currentSize);
 };
